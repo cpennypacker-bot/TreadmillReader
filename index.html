@@ -914,12 +914,8 @@ const BluetoothManager = (function() {
 
         try {
             device = await navigator.bluetooth.requestDevice({
-                filters: [
-                    { services: [FTMS_SERVICE_UUID] },
-                    { namePrefix: 'Assault' },
-                    { namePrefix: 'ASSAULT' }
-                ],
-                optionalServices: [
+    acceptAllDevices: true,
+    optionalServices: [
                     FTMS_SERVICE_UUID,
                     HEART_RATE_SERVICE_UUID,
                     'battery_service'
